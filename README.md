@@ -1,18 +1,34 @@
-## Getting Started
+# 📚 Universal Library Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 🎯 Sobre o Projeto
+Vivemos na era da sobrecarga de informação. Entre séries, animes, filmes e a necessidade constante de estudo para **Concursos Públicos** e **Faculdade (ADS)**, fica difícil gerenciar o progresso de tudo.
 
-## Folder Structure
+O **Universal Library** é um sistema desenvolvido em Java para atuar como um "Segundo Cérebro", permitindo cadastrar, organizar e acompanhar o status de consumo de diferentes tipos de mídia.
 
-The workspace contains two folders by default, where:
+Este projeto serve como laboratório prático para estudos de **Análise e Desenvolvimento de Sistemas**, focando em boas práticas de programação e conceitos exigidos em editais de TI.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 🚀 Tecnologias Utilizadas
+* **Linguagem:** Java (JDK 17/21)
+* **IDE:** VS Code
+* **Controle de Versão:** Git & GitHub
+* **Banco de Dados:** (Em breve: PostgreSQL/MySQL)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## ☕ Conceitos de POO Aplicados
+O diferencial deste projeto é a utilização de conceitos fortes de Orientação a Objetos, essenciais para o mercado e provas de concurso:
+* **Abstração:** Criação de modelos genéricos para itens da biblioteca.
+* **Herança:** As classes `Filme`, `Serie` e `MaterialEstudo` herdam atributos da classe base.
+* **Polimorfismo:** Tratamento unificado de diferentes tipos de mídia em uma única lista.
+* **Encapsulamento:** Proteção dos dados sensíveis das classes.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 📋 Funcionalidades (Roadmap)
+- [ ] Cadastro de Itens (Filmes, Animes, Cursos)
+- [ ] Cálculo de tempo total investido
+- [ ] Sistema de Avaliação (Notas 1 a 5)
+- [ ] Filtro de Prioridade (Lazer vs Estudo)
+- [ ] Persistência de dados (Banco de Dados)
 
-## Dependency Management
+## 👨‍💻 Autor
+Desenvolvido por **Jorbson** durante a jornada de transição de carreira para Desenvolvimento de Software e estudos para Concursos Públicos.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+*Projeto Open Source sob a licença MIT.*
