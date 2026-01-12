@@ -2,6 +2,12 @@ package exercicios;
 
 import java.util.Scanner;
 
+
+public class Desafios {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
 /* O Desafio: "Calculadora de Maratona"
 
     O que o código deve fazer:
@@ -10,11 +16,6 @@ import java.util.Scanner;
     Perguntar quantos minutos tem cada episódio (ou cada aula).
     Perguntar quantos episódios/aulas faltam.
     Calcular o tempo total em minutos e imprimir na tela. */
-
-public class Desafios {
-    public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
 
         System.out.println("Escreva o nome do conteudo que você esta acompanhando:");
         String name = input.nextLine();
@@ -26,8 +27,8 @@ public class Desafios {
         int total = time * episodio;
 
         System.out.printf("Vai ser necessario %d minutos para você finalizar %s.", total,name);
-
-        input.close();
+        
+         input.close();
     }
     
 }
