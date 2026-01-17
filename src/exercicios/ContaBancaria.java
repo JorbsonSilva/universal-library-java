@@ -1,7 +1,5 @@
 package exercicios;
 
-import java.util.Scanner;
-
 public class ContaBancaria {
 
     private int numerConta = 0;
@@ -69,16 +67,44 @@ public class ContaBancaria {
             double valorS = valor - saldo;
             this.saldo = 0;
             this.valorUsadoChequeEspecial += valorS;
-            this.estarNoChequeEspecial = true;  
+            this.estarNoChequeEspecial = true;
+            System.out.print("Retire o dinheiro.");  
             return true;        
         
         } else {
+            System.out.print("Valor insuficiente para realizar o saque.");
+            return false;
+        }
+    }
+
+    public boolean boleto(double valor){ 
+        double saldoTotalDisponivel = this.saldo + this.valorChequeEspecial;
+
+        if (valor <= saldo){
+            this.saldo -= valor;
+            return true;
+            
+        } else if ( valor <= saldoTotalDisponivel){
+            // aqui precisei fazer algumas alterações para calcular o valor utilizado do cheque especial.
+            double valorS = valor - saldo;
+            this.saldo = 0;
+            this.valorUsadoChequeEspecial += valorS;
+            this.estarNoChequeEspecial = true;
+            System.out.print("Boleto pago, imprimindo o comprovante.");  
+            return true;        
+        
+        } else {
+            System.out.print("Valor insuficiente para realizar o pagamento.");
             return false;
         }
     }
 
     public double getCheque(){
         return valorChequeEspecial;
+    }
+
+    public double getValorUsadoCheque(){
+        return valorUsadoChequeEspecial;
     }
 
     public double getNumer(){
@@ -93,44 +119,6 @@ public class ContaBancaria {
         return nome;
     }
 
-    
-    
-    public static void main(String[] args) {
-
-        Scanner input = new Scanner(System.in);
-
-        int numer = 1;
-
-        System.out.println("Caixa eletrônico");
-        System.out.println("________________");
-        System.out.println("Criar sua conta?(true/false");
-        boolean confirmacao = input.nextBoolean();
-        if ( confirmacao == true) {
-            System.out.println("Digite seu nome:");
-            String nom = input.next();
-            System.out.println("Quanto você quer depositar?");
-            double depos = input.nextDouble();
-            numer += 1;
-            var conta = new ContaBancaria(depos, numer, nom);
-            
-        }else { System.out.println("Obrigado!!!");}
-
-        while (confirmacao == true) {
-            
-
-
-
-
-            
-        }
-
-
-
-
-
-        input.close();
-
-        
-    }
-   
+      
 }
+
