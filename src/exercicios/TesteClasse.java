@@ -25,13 +25,12 @@ public class TesteClasse {
             menu = true;
             
         }else {             
-            System.out.println("Obrigado!!!");
-        }
-
-        var conta = new ContaBancaria(depos, numer, nom);
+            System.out.println("Obrigado!!! Volte sempre.");
+        }      
         
-        while ( menu == true) {   
-            System.out.printf("Bem Vindo, Sr. %s; numero da conta é %s.", conta.getNome(), conta.getNumer());
+        while ( menu == true) { 
+            var conta = new ContaBancaria(depos, numer, nom);  
+            System.out.printf("Bem Vindo, Sr. %s; Numero da conta é %.0f. \n", conta.getNome(), conta.getNumer());
             System.out.println("Escolha uma opção abaixo:");
             System.out.println("1 - Consultar saldo;");
             System.out.println("2 - Consultar cheque especial;");
@@ -43,10 +42,10 @@ public class TesteClasse {
             int opcao = input.nextInt();
 
             if(opcao == 1){
-                System.out.printf("Seu saldo é de R$ %s.\n", conta.getSaldo());
+                System.out.printf("Seu saldo é de R$ %.2f.\n", conta.getSaldo());
 
             } else if(opcao == 2){
-                System.out.printf("Seu saldo de cheque especial é de R$ %s.\n", conta.getCheque());
+                System.out.printf("Seu saldo de cheque especial é de R$ %.2f.\n", conta.getCheque());
 
             } else if(opcao == 3){
                 System.out.println("Quanto voce quer depositar?");
@@ -67,7 +66,7 @@ public class TesteClasse {
                 if(conta.getUserCheque()== false){
                     System.out.println("Conta não esta utilizando o limite do cheque especial.");
                 }else{
-                    System.out.printf("Conta esta ultilizando cheque especial, valor utilizado é de R$ %s.\n",conta.getValorUsadoCheque());
+                    System.out.printf("Conta esta ultilizando cheque especial, valor utilizado é de R$ %.2f.\n",conta.getValorUsadoCheque());
                 }
 
             } else if(opcao == 7){

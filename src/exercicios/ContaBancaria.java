@@ -60,6 +60,8 @@ public class ContaBancaria {
 
         if (valor <= saldo){
             this.saldo -= valor;
+            System.out.print("Retire o dinheiro.");
+
             return true;
             
         } else if ( valor <= saldoTotalDisponivel){
@@ -68,33 +70,25 @@ public class ContaBancaria {
             this.saldo = 0;
             this.valorUsadoChequeEspecial += valorS;
             this.estarNoChequeEspecial = true;
-            System.out.print("Retire o dinheiro.");  
+            System.out.println("\n  ALERTA: Você entrou no Cheque Especial! ");
+            System.out.println("Taxa de 20% será cobrada no próximo depósito.");
+            System.out.println("Retire o dinheiro.");  
             return true;        
         
         } else {
-            System.out.print("Valor insuficiente para realizar o saque.");
+            System.out.println("Valor insuficiente para realizar o saque.");
             return false;
         }
     }
 
     public boolean boleto(double valor){ 
-        double saldoTotalDisponivel = this.saldo + this.valorChequeEspecial;
-
-        if (valor <= saldo){
-            this.saldo -= valor;
-            return true;
-            
-        } else if ( valor <= saldoTotalDisponivel){
-            // aqui precisei fazer algumas alterações para calcular o valor utilizado do cheque especial.
-            double valorS = valor - saldo;
-            this.saldo = 0;
-            this.valorUsadoChequeEspecial += valorS;
-            this.estarNoChequeEspecial = true;
-            System.out.print("Boleto pago, imprimindo o comprovante.");  
-            return true;        
+        boolean conseguiuPagar = sacar(valor); 
         
+        if (conseguiuPagar) {
+            System.out.println("Boleto pago com sucesso! Comprovante impresso.");
+            return true;
         } else {
-            System.out.print("Valor insuficiente para realizar o pagamento.");
+            System.out.println("Erro ao pagar boleto: Saldo insuficiente.");
             return false;
         }
     }
