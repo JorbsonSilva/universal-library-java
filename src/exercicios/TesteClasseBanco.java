@@ -2,7 +2,7 @@ package exercicios;
 
 import java.util.Scanner;
 
-public class TesteClasse {
+public class TesteClasseBanco {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
