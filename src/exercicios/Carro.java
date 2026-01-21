@@ -50,6 +50,10 @@ public class Carro {
         }
     }
 
+    public boolean isLigado() {
+        return estado;
+    }
+
     public void setEstado(boolean valor){
         if(valor == true){
             this.estado = valor;
@@ -63,25 +67,32 @@ public class Carro {
         
     }
 
-    public void setMarcha(int novaMarcha){
-        int veirificacao = novaMarcha - marcha;
-        if(estado == true){
-            if(veirificacao == 1 || veirificacao == -1){
-                if(novaMarcha > marcha){
-                    this.marcha++;
-                    System.out.printf("Sua marcha agora é %d", marcha);
-                }else{
-                    this.marcha--;
-                    System.out.printf("Sua marcha agora é %d", marcha);
-                }
+    public int getMarcha(){
+        return marcha;
+    }
 
-            }else{
-                System.out.println("Você so pode surbir ou descer uma marcha de cada vez.");
+    public void subirMarcha(){
+        if(estado == true){
+            if(marcha<6){
+                this.marcha++;
+            } else {
+                System.out.println("Marcha limite alcançada.");
             }
-        }else{
+        } else {
             System.out.println("Carro se encontra desligado.");
         }
+    }
 
+    public void descMarcha(){
+        if(estado == true){
+            if(marcha>0){
+                this.marcha--;
+            } else {
+                System.out.println("Carro ja se encontra em ponto morto.");
+            }
+        }else {
+                System.out.println("Carro se encontra desligado.");
+        }
     }
 
     public void acelerar(int valor){
@@ -121,17 +132,17 @@ public class Carro {
             if(velocidade == 0){
                 System.out.println("Velocidade minima alcançada!!!!");
             }else{
-                if (velocidade <= 20 && marcha == 1){
+                if (velocidade >= 1 && marcha == 1){
                     this.velocidade--;            
-                } else if(velocidade <= 40 && marcha == 2){
+                } else if(velocidade > 21 && marcha == 2){
                     this.velocidade--;
-                } else if(velocidade <= 60 && marcha == 3){
+                } else if(velocidade > 41 && marcha == 3){
                     this.velocidade--;
-                } else if(velocidade <= 80 && marcha == 4){
+                } else if(velocidade > 61 && marcha == 4){
                     this.velocidade--;
-                } else if(velocidade <= 100 && marcha == 5){
+                } else if(velocidade > 81 && marcha == 5){
                     this.velocidade--;
-                } else if(velocidade <= 120 && marcha == 6){
+                } else if(velocidade > 101 && marcha == 6){
                     this.velocidade--;
                 } else {
                     System.out.println("Você deve diminuir a marcha para continuar a desacelerar.");
