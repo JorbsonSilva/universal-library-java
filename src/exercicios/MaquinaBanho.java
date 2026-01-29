@@ -115,4 +115,8 @@ public class MaquinaBanho {
     public double getShampoo(){
         return shampoo;
     }
+
+    public boolean getTemPet(){
+        return temPet;
+    }
 }
