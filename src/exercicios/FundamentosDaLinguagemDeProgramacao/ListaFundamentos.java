@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.FundamentosDaLinguagemDeProgramacao;
 
 import java.time.OffsetDateTime;
 import java.util.Scanner;
@@ -56,7 +56,7 @@ public class ListaFundamentos {
         
         int differenceAge = age1 - age2;
 
-        System.out.printf("Olá, a diferença de idade de vocês é %s !", differenceAge);
+        System.out.printf("Olá, a diferença de idade de %s e %s é %s !", name1, name2, differenceAge);
 
         input.close();
 

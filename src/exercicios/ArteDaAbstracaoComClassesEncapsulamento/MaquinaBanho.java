@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ArteDaAbstracaoComClassesEncapsulamento;
 
 /* Escreva um código onde temos o controle de banho de um petshop, a maquina de banhos dos pets deve ter as seguintes operações:
 Dar banho no pet;

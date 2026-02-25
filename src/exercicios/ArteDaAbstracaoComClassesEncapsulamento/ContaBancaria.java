@@ -1,4 +1,4 @@
-package exercicios;
+package exercicios.ArteDaAbstracaoComClassesEncapsulamento;
 
 public class ContaBancaria {
 
