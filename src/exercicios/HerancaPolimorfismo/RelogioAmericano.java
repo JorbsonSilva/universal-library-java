@@ -2,11 +2,30 @@ package exercicios.HerancaPolimorfismo;
 
 public class RelogioAmericano extends Relogio{
 
+    private String periodo;
+
         
-    public RelogioAmericano(int hora, int minuto, int segundo){
+    public RelogioAmericano(int hora, int minuto, int segundo, String periodo){
         this.setHora(hora);
         this.setMinuto(minuto);
         this.setSegundo(segundo);
+        this.periodo = periodo;
+    }
+
+    @Override
+    public String getHoraFormatada(){
+        return super.getHoraFormatada() + " " + this.periodo.toUpperCase();
+    }
+
+    @Override
+    public int getHoraUniversal(){
+        if(this.periodo.equalsIgnoreCase("PM")&& this.getHora()<12){
+            return getHora() + 12;
+        } else if (this.periodo.equalsIgnoreCase("AM")&& this.getHora() == 12){
+            return 0;
+        }else {
+            return this.getHora();
+        }
     }
 
     @Override
@@ -22,7 +41,20 @@ public class RelogioAmericano extends Relogio{
 
     @Override
     public void sincronizar(Relogio outroRelogio){
-        this.setHora(outroRelogio.getHora());
+        int horaUniversal = outroRelogio.getHoraUniversal();
+        if (horaUniversal == 0){
+            this.setHora(12);
+            this.periodo = "AM";
+        } else if (horaUniversal >= 1 && horaUniversal <= 11) {
+            this.setHora(horaUniversal);
+            this.periodo = "AM";
+        } else if (horaUniversal == 12) {
+            this.setHora(12);
+            this.periodo = "PM";
+        } else {
+            this.setHora(horaUniversal - 12);
+            this.periodo = "PM";
+        }
         this.setMinuto(outroRelogio.getMinuto());
         this.setSegundo(outroRelogio.getSegundo());
     }

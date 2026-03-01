@@ -34,7 +34,7 @@ public abstract class Relogio {
     }
 
     public void setMinuto(int minuto){
-        if(minuto >= 0 && minuto <= 60){
+        if(minuto >= 0 && minuto <= 59){
         this.minuto = minuto;
         } else {
             System.out.println("Porfavor escolha entre 0 a 60 minutos");
@@ -46,7 +46,7 @@ public abstract class Relogio {
     }
 
     public void setSegundo(int segundo){
-        if(segundo >= 0 && segundo <= 60){
+        if(segundo >= 0 && segundo <= 59){
         this.segundo = segundo;
         } else {
             System.out.println("Porfavor escolha entre 0 a 60 segundo");
@@ -56,6 +56,8 @@ public abstract class Relogio {
     public String getHoraFormatada(){
         return String.format("%02d:%02d:%02d", hora,minuto,segundo);
     }
+
+    public abstract int getHoraUniversal();
     
     public abstract void sincronizar(Relogio outroRelogio);
 }
