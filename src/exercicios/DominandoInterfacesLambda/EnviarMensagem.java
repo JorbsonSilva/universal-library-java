@@ -1,4 +1,4 @@
-package exercicios.Dominando_Interfaces_Lambda;
+package exercicios.DominandoInterfacesLambda;
 
 @FunctionalInterface
 public interface EnviarMensagem {
